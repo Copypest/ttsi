@@ -38,7 +38,7 @@
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Membership Date :</label>
-                                    <input type="text" name="Membership Date" value="" class="form-control datepicker" readonly>
+                                    <input type="text" name="membership_date" value="" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             
@@ -94,7 +94,23 @@
                                     <input type="text" name="gurdian" value="" class="form-control">
                                 </div>
                             </div>
-                            
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label>Life Member :</label><br>
+                                    <span class="roomTypes">
+                                    <label>
+                                        <input type="radio" class="minimal" name="life_member" value="yes" checked="checked" >
+                                    </label>
+                                    Yes
+                                    </span>
+                                    <span class="roomTypes">
+                                    <label>
+                                        <input type="radio" class="minimal" name="life_member" value="no">
+                                    </label>
+                                    No
+                                    </span>
+                                </div>
+                            </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Address :</label>
@@ -115,25 +131,25 @@
                                     <input type="number" name="monthly_income" value="" class="form-control">
                                 </div>
                             </div>
-                            
+                           
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Treatment Started From Date :</label>
-                                    <input type="text" name="treatment_started_date" value="" class="form-control datepicker" readonly>
+                                    <input type="text" name="treatment_started_date" value="" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Date Expired :</label>
-                                    <input type="text" name="date_expired" value="" class="form-control">
+                                    <input type="text" name="date_expired" value="" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Date Left :</label>
-                                    <input type="text" name="date_left" value="" class="form-control">
+                                    <input type="text" name="date_left" value="" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             

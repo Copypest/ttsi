@@ -39,7 +39,7 @@
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Membership Date :</label>
-                                    <input type="text" name="membership_date" value="<?php echo set_value('membership_date',$patient['membership_date']);?>" class="form-control datepicker" readonly>
+                                    <input type="text" name="membership_date" value="<?php echo set_value('membership_date',$patient['membership_date']);?>" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             
@@ -102,7 +102,23 @@
                                     <input type="text" name="gurdian" value="<?php echo set_value('gurdian',$patient['gurdian']);?>" class="form-control">
                                 </div>
                             </div>
-                            
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label>Life Member :</label><br>
+                                    <span class="roomTypes">
+                                    <label>
+                                        <input type="radio" class="minimal" name="life_member" value="male" <?php echo $patient['life_member'] == 'yes' ? 'checked' : ''; ?> >
+                                    </label>
+                                    Yes
+                                    </span>
+                                    <span class="roomTypes">
+                                    <label>
+                                        <input type="radio" class="minimal" name="life_member" value="female" <?php echo $patient['life_member'] == 'no' ? 'checked' : ''; ?>>
+                                    </label>
+                                    No
+                                    </span>
+                                </div>
+                            </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Address :</label>
@@ -127,21 +143,21 @@
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Treatment Started From Date :</label>
-                                    <input type="text" name="treatment_started_date" value="<?php echo set_value('treatment_started_date',$patient['treatment_started_date']);?>" class="form-control datepicker" readonly>
+                                    <input type="text" name="treatment_started_date" value="<?php echo set_value('treatment_started_date',$patient['treatment_started_date']);?>" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Date Expired :</label>
-                                    <input type="text" name="date_expired" value="<?php echo set_value('date_expired',$patient['date_expired']);?>" class="form-control datepicker" readonly>
+                                    <input type="text" name="date_expired" value="<?php echo set_value('date_expired',$patient['date_expired']);?>" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Date Left :</label>
-                                    <input type="text" name="date_left" value="<?php echo set_value('date_left',$patient['date_left']);?>" class="form-control datepicker" readonly>
+                                    <input type="text" name="date_left" value="<?php echo set_value('date_left',$patient['date_left']);?>" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                                 </div>
                             </div>
                             

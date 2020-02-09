@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         <i class="fa fa-users"></i> Patient Management
-        <small>Add, Edit, Delete</small>
+        <small></small>
       </h1>
     </section>
     <section class="content">
@@ -21,118 +21,127 @@
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>','</div>'); ?>
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Add New Patient</h3>
+                    <h3 class="box-title">Patient Details</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   
                     <form action="" method="post">
+                    <input type="hidden" name="id" value="<?php echo $patient['id'];?>">
                         <div class="controls">
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Membership / Registration No :</label>
-                                    <input type="text" name="membership_no" value="" class="form-control">
+                                    <?php echo set_value('membership_no',$patient['membership_no']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Membership Date :</label>
-                                    <input type="text" name="Membership Date" value="" class="form-control">
+                                    <?php echo set_value('membership_date',$patient['membership_date']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Name :</label>
-                                    <input type="text" name="name" value="" class="form-control">
+                                    <label>Patient Name :</label>
+                                    <?php echo set_value('name',$patient['name']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>DOB :</label>
-                                    <input type="text" name="dob" value="" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                    <?php echo set_value('dob',$patient['dob']);?>
                                 </div>
                             </div>
                             
-                            <div class="col-sm-12 col-md-6">
+                           <!--<div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Name :</label>
-                                    <input type="text" name="" value="" class="form-control">
+                                    <input type="text" name="type_of_thalassaemia" value="<?php echo set_value('type_of_thalassaemia',$patient['type_of_thalassaemia']);?>" class="form-control">
                                 </div>
-                            </div>
+                            </div>-->
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Gender :</label><br>
-                                    <span class="roomTypes">
-                                    <label>
-                                        <input type="radio" class="minimal" name="gender" value="male">
-                                    </label>
-                                    Male
-                                    </span>
-                                    <span class="roomTypes">
-                                    <label>
-                                        <input type="radio" class="minimal" name="gender" value="female">
-                                    </label>
-                                    Female
-                                    </span>
+                                    <label>Gender :</label>
+                                    <?php echo $patient['gender'];?>
+                                                                      
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Type of Thalassaemia :</label>
-                                    <input type="text" name="type_of_thalassaemia" value="" class="form-control">
+                                   <?php echo set_value('type_of_thalassaemia',$patient['type_of_thalassaemia']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Blood Group :</label>
-                                    <input type="text" name="blood_group" value="" class="form-control">
+                                    <?php echo set_value('blood_group',$patient['blood_group']);?>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label>Life Member :</label>
+                                    <?php echo set_value('blood_group',$patient['life_member']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label>Gurdian :</label>
-                                    <input type="text" name="gurdian" value="" class="form-control">
+                                    <label>Member (Gurdian / Parent ) Name :</label>
+                                    <?php echo set_value('gurdian',$patient['gurdian']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Address :</label>
-                                    <input type="text" name="address" value="" class="form-control">
+                                    <?php echo set_value('address',$patient['address']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Contact No. :</label>
-                                    <input type="text" name="contact_no" value="" class="form-control">
+                                   <?php echo set_value('contact_no',$patient['contact_no']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Monthly Income :</label>
-                                    <input type="text" name="monthly_income" value="" class="form-control">
+                                    <?php echo set_value('monthly_income',$patient['monthly_income']);?>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label>Treatment Started From Date :</label>
-                                    <input type="text" name="treatment_started_date" value="" class="form-control datepicker" readonly>
+                                    <?php echo set_value('treatment_started_date',$patient['treatment_started_date']);?>
                                 </div>
                             </div>
                             
-                            <div class="col-sm-12 col-md-12">
-                                <input type="submit" class="btn btn-success btn-send pull-right" value="Save">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label>Date Expired :</label>
+                                   <?php echo set_value('date_expired',$patient['date_expired']);?>
+                                </div>
                             </div>
+                            
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label>Date Left :</label>
+                                   <?php echo set_value('date_left',$patient['date_left']);?>
+                                </div>
+                            </div>
+                            
+                            
                             
                             
                         </div>
@@ -157,16 +166,9 @@
 <script src="<?php echo base_url('assets/plugins/input-mask/jquery.inputmask.js');?>"></script>
 <script src="<?php echo base_url('assets/plugins/input-mask/jquery.inputmask.date.extensions.js');?>"></script>
 <script src="<?php echo base_url('assets/plugins/input-mask/jquery.inputmask.extensions.js'); ?>"></script>
-<link rel="stylesheet" href="<?php echo base_url('assets/plugins/iCheck/all.css'); ?>">
-<script src="<?php echo base_url('assets/plugins/iCheck/icheck.min.js');?>"></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-        
-        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-          checkboxClass: 'icheckbox_minimal-blue',
-          radioClass   : 'iradio_minimal-blue'
-        })
         
         $('.datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
         
@@ -183,9 +185,3 @@
         });
     });
 </script>
-
-<style>
-    .roomTypes{
-        margin:5px;
-    }
-</style>

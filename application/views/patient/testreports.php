@@ -2,17 +2,23 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Patient Management
-        <small>Add, Edit, Delete</small>
-      </h1>
+            <i class="fa fa-user"></i> <?=@$membership_name?>
+            <small><?=@$membership_no?></small>
+        </h1>
     </section>
     <section class="content">
         <div class="row">
-            <div class="col-xs-12 text-right">
+            <div class="col-xs-6 text-left">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url('patient/addNew'); ?>"><i class="fa fa-plus"></i> Add New</a>
+                    <a class="btn btn-primary" href="<?php echo base_url('patient/addTest/'.$patient_id); ?>"><i class="fa fa-plus"></i> Add New Test Report</a>
                 </div>
             </div>
+            <div class="col-xs-6 text-right">
+                <div class="form-group">
+                    <a class="btn btn-primary" href="<?php echo base_url('patient'); ?>"><i class="fa fa-fw fa-backward"></i> Back</a>
+                </div>
+            </div>
+
         </div>
         <div class="row">
             <div class="col-xs-12">
@@ -34,7 +40,7 @@
                   
                   
                 <div class="box-header">
-                    <h3 class="box-title">Patients List</h3>
+                    <h3 class="box-title">Patient Test report List</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   
@@ -42,39 +48,24 @@
                     <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                  <th>Membership No.</th>
-                                  <th>Name</th>
-                                  <th>Type Of Thalassaemia</th>
-                                  <th>Blood Group</th>
-                                  <th>Contact</th>
-                                  <th>DOB</th>
+                                  <th>Date</th>
                                   <th>Action</th>
                                 </tr>
                                 </thead>
                             
                                 <tbody>
                                     <?php 
-                                    foreach($customers as $customer): 
+                                    foreach($reports as $val): 
                                     ?>
                                     <tr>
-                                        <td><?php echo $customer['membership_no'];?></td>
-                                        <td><?php echo $customer['name'];?></td>
-                                        <td><?php echo $customer['type_of_thalassaemia'];?></td>
-                                        <td><?php echo $customer['blood_group'];?></td>
-                                        <td><?php echo $customer['contact_no']?></td>
-                                        <td><?php echo showDate($customer['dob'],'d/m/Y');?></td>
+                                         <td><?php echo showDate($val['created_on'],'d/m/Y');?></td>
+                                        
+                                        
                                         <td>
-                                            <a title="Details" href="<?php echo base_url('patient/details/').$customer['id'];?>"><i class="fa fa-fw fa-info-circle"></i></a>
-                                            <!-- <a title="Details" href="javascript:void(0)" data-toggle="modal" data-target="#modal-default" onclick='details(<?php //echo json_encode($customer);?>)'><i class="fa fa-fw fa-info-circle"></i></a> -->
+                                            <a title="Details" href="<?php echo base_url('patient/addTest/'.$patient_id.'/'.$val['id']);?>"><i class="fa fa-fw fa-info-circle"></i></a>
+                                          <!--
                                             <a title="Edit" href="<?php echo base_url('patient/edit/').$customer['id'];?>"><i class="fa fa-fw fa-edit"></i></a>
-                                            <a title="Delete" href="javascript:void(0)" class="deleteRow" id="<?php echo $customer['id'];?>"><i class="fa fa-fw fa-trash-o"></i></a>
-                                            <!--
-                                            <a href="<?php echo base_url('patient/addTest/').$customer['id'];?>" title="Add test report"><i class="fa fa-fw fa-plus-circle"></i></a>-->
-
-                                            <a href="<?php echo base_url('patient/testReports/').$customer['id'];?>" title="Show Test Report"><i class="fa fa-fw fa-bar-chart"></i></a>
-
-
-                                            
+                                            -->
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
